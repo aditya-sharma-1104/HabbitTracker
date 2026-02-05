@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Gaming-inspired dark theme
+   * HSL values for gaming aesthetic with high contrast and neon elements
+  */
+  :root {
+    /* Base dark theme - Gaming colors by default */
+    --background: 220 20% 6%;
+    --foreground: 210 20% 95%;
+
+    --card: 220 20% 8%;
+    --card-foreground: 210 20% 95%;
+
+    --popover: 220 20% 8%;
+    --popover-foreground: 210 20% 95%;
+
+    --primary: 195 100% 50%;
+    --primary-foreground: 220 20% 6%;
+
+    --secondary: 220 20% 12%;
+    --secondary-foreground: 210 20% 90%;
+
+    --muted: 220 20% 10%;
+    --muted-foreground: 210 20% 70%;
+
+    --accent: 270 100% 60%;
+    --accent-foreground: 220 20% 6%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 210 20% 95%;
+
+    --border: 220 20% 15%;
+    --input: 220 20% 12%;
+    --ring: 195 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Gaming color palette */
+    --gaming-dark: 220 20% 6%;
+    --gaming-darker: 220 25% 4%;
+    --gaming-purple: 270 100% 60%;
+    --gaming-blue: 210 100% 55%;
+    --gaming-cyan: 195 100% 50%;
+    --gaming-silver: 210 15% 75%;
+    --gaming-gold: 45 100% 60%;
+    --gaming-green: 120 100% 50%;
+    --gaming-red: 0 75% 55%;
+
+    /* Category colors */
+    --strength: 0 75% 55%;
+    --intelligence: 210 100% 55%;
+    --discipline: 45 100% 60%;
+    --magic: 270 100% 60%;
+    --luck: 120 100% 50%;
+
+    /* Sidebar colors */
+    --sidebar-background: 220 20% 8%;
+    --sidebar-foreground: 210 20% 90%;
+    --sidebar-primary: 195 100% 50%;
+    --sidebar-primary-foreground: 220 20% 6%;
+    --sidebar-accent: 220 20% 12%;
+    --sidebar-accent-foreground: 210 20% 90%;
+    --sidebar-border: 220 20% 15%;
+    --sidebar-ring: 195 100% 50%;
+  }
+
+  .dark {
+    /* Enhanced dark mode */
+    --background: 220 25% 4%;
+    --foreground: 210 20% 98%;
+
+    --card: 220 20% 7%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 220 20% 7%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 195 100% 55%;
+    --primary-foreground: 220 25% 4%;
+
+    --secondary: 220 20% 10%;
+    --secondary-foreground: 210 20% 95%;
+
+    --muted: 220 20% 8%;
+    --muted-foreground: 210 20% 75%;
+
+    --accent: 270 100% 65%;
+    --accent-foreground: 220 25% 4%;
+
+    --destructive: 0 80% 60%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 220 20% 12%;
+    --input: 220 20% 10%;
+    --ring: 195 100% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background-image:
+      radial-gradient(circle at 20% 50%, rgba(195, 100%, 50%, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(270, 100%, 60%, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 80%, rgba(210, 100%, 55%, 0.1) 0%, transparent 50%);
+  }
+
+  /* Gaming-specific styles */
+  .neon-text {
+    text-shadow:
+      0 0 5px currentColor,
+      0 0 10px currentColor,
+      0 0 15px currentColor,
+      0 0 20px currentColor;
+  }
+
+  .neon-border {
+    border: 1px solid currentColor;
+    box-shadow:
+      0 0 5px currentColor,
+      inset 0 0 5px currentColor;
+  }
+
+  .gradient-text {
+    background: linear-gradient(45deg, #00ffff, #8a2be2, #00bfff);
+    background-size: 300% 300%;
+    animation: gradient 3s ease infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  /* Scrollbar styling for gaming theme */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--gaming-dark));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--gaming-cyan));
+    border-radius: 4px;
+    box-shadow: 0 0 5px hsl(var(--gaming-cyan));
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--gaming-blue));
+    box-shadow: 0 0 10px hsl(var(--gaming-blue));
+  }
+}
